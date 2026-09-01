@@ -40,7 +40,13 @@ exports.test = base.test.extend({
         const context = await authedContext(playwright, 'lider1', 'lider1123');
         await use(context);
         await context.dispose();
-    }
+    },
+
+    operator2Request: async ({ playwright }, use) => {
+        const context = await authedContext(playwright, 'oper2', 'oper2123');
+        await use(context);
+        await context.dispose();
+    }      
 });
 
 exports.expect = base.expect;
